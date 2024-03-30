@@ -1,0 +1,898 @@
+:root {
+  --gradColor1: #fc6668;
+  --gradColor2: #e10489;
+}
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  line-height: 1.8;
+}
+
+.textWhite {
+  color: white;
+}
+
+.imgShadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  margin: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* komentaru hoveris  */
+
+.imageHoverEffect {
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+
+.imageHoverEffect img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.imageHoverEffect::after {
+  content: "0 Comments";
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 90%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0);
+  color: transparent;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.imageHoverEffect:hover::after {
+  background-color: rgba(186, 179, 179, 0.7);
+  color: white;
+}
+
+.mainLogo {
+  background-image: url(./assets/logo-wave7.svg);
+  height: 43px;
+  width: 180px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.mainLogo:hover {
+  transform: translateY(-5px);
+  transition: 0.5s ease-in-out;
+}
+
+.hoverUp {
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.hoverUp:hover {
+  transform: translateY(-5px);
+  transition: 0.5s ease-in-out;
+}
+
+.active {
+  color: var(--gradColor1);
+}
+
+.active::after {
+  height: 0 !important;
+}
+
+.navbar button {
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar button::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 0;
+  background-color: #aef3ff;
+  transition: height 0.3s ease;
+}
+
+.navbar button:hover::after {
+  height: 4px;
+}
+
+.hoverBlueLine {
+  transition: background-size 0.3s ease;
+  cursor: pointer;
+  display: inline;
+  background-image: linear-gradient(to right, #aef3ff, #aef3ff);
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: 0 100%;
+}
+
+.hoverBlueLine:hover {
+  background-size: 100% 4px;
+}
+
+.subscribeButton {
+  border-radius: 8px;
+  padding: 7px 22px;
+  margin: 0 10px 0 0;
+  color: white;
+  background: linear-gradient(97deg, var(--gradColor1), var(--gradColor2));
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+.subscribeButton::after {
+  height: 0 !important;
+}
+
+.subscribeButton:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://img.freepik.com/premium-vector/abstract-colorful-transparent-wave-pink-wave_206325-127.jpg");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  animation: moveWave 10s linear infinite;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.subscribeButton > * {
+  position: relative;
+  z-index: 1;
+}
+/* animacija button */
+@keyframes moveWave {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+
+/*
+Animacija subscribe Letter
+*/
+
+.subscribeNewsletter {
+  margin-left: 20px !important;
+  border-radius: 8px;
+  padding: 45px 40px;
+  margin: 0 10px 0 0;
+  color: white;
+  background: linear-gradient(135deg, #4776e6 0%, #8e54e9 100%);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.subscribeNewsletter::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://hips.hearstapps.com/hmg-prod/images/3d-render-abstract-background-glowing-dynamic-wavy-royalty-free-image-1679530788.jpg");
+  background-repeat: repeat;
+  background-size: auto 100%;
+  animation: moveWaveLetter 12s linear infinite;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.subscribeNewsletter > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes moveWaveLetter {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: -100% center; /* Moves to the left by 100% of its width */
+  }
+}
+
+.footerWave {
+  border-radius: 8px;
+  padding: 45px 40px;
+  margin: 0 10px 0 0;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    rgb(255, 249, 242) 0%,
+    rgb(252, 223, 172) 100%
+  );
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.footerWave::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://img.freepik.com/premium-vector/abstract-colorful-transparent-wave-pink-wave_206325-127.jpg");
+  background-repeat: repeat;
+  background-size: auto 400%;
+  animation: moveWavefooterWave 50s linear infinite;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.footerWave > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes moveWavefooterWave {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center; /* Moves to the left by 100% of its width */
+  }
+}
+
+/* animacija backgroundui */
+/* wrapperis kad bangos liktu virsuje  */
+.fixed-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100vh;
+  z-index: -999;
+  overflow: hidden;
+}
+
+.backgroundWave {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 150%;
+  height: 100%;
+  overflow: hidden;
+  transform: translate(-50%, -50%) rotate3d(1, 1, 1, -20deg);
+}
+
+.backgroundLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  background-repeat: repeat-x;
+}
+
+.wave1,
+.wave2 {
+  background-image: url("https://themes.estudiopatagon.com/selector/wavy-ghost/images/wave2.svg"),
+    url("https://themes.estudiopatagon.com/selector/wavy-ghost/images/wave-2.svg");
+}
+
+.wave1 {
+  animation: background-animation 60s cubic-bezier(0.36, 0.45, 0.63, 0.53)
+    infinite;
+}
+
+.wave2 {
+  animation: background-animation 40s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s
+    infinite;
+}
+
+@keyframes background-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-55%);
+  }
+}
+
+/* animacija bg baigiasi  */
+
+.slide img {
+  border-radius: 15px;
+}
+
+.carousel-control-prev .fa-arrow-left,
+.carousel-control-next .fa-arrow-right,
+.caruselButton {
+  font-size: 14px;
+  line-height: 35px;
+  height: 35px;
+  width: 35px;
+  background: linear-gradient(97deg, var(--gradColor1), var(--gradColor2));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+#carouselExampleIndicators .carousel-indicators button {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 10px;
+  background-color: #dfe2fb !important;
+  border: none;
+  transition: width 0.5s ease;
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  padding-left: 0;
+  left: -90px;
+}
+
+#carouselExampleIndicators .carousel-indicators .active {
+  width: 25px !important;
+  height: 12px !important;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    97deg,
+    var(--gradColor1),
+    var(--gradColor2)
+  );
+}
+
+#carouselExampleCaptions {
+  padding: 0;
+}
+
+.carousel {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.carousel .carousel-inner {
+  position: relative;
+}
+
+.accordion {
+  padding-top: 10px;
+}
+
+.accordion-button::after {
+  display: none;
+}
+
+.count {
+  padding: 5px 10px 5px 10px;
+  margin: 0 30px 0 0;
+  border-radius: 50%;
+  background-color: #002050;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activeCount1 {
+  background-color: var(--gradColor1);
+}
+.activeCount2 {
+  background-color: var(--gradColor1);
+}
+.activeCount3 {
+  background-color: var(--gradColor1);
+}
+
+.author {
+  display: flex;
+  justify-content: left;
+  margin-left: 65px;
+  margin-bottom: 15px;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin-bottom: 30px;
+}
+
+.authorName {
+  color: var(--gradColor1);
+  font-size: 0.8rem;
+}
+
+.authorAvatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-image: url(./assets/avatar1.jpeg);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.fontSmall {
+  font-size: 12px;
+}
+
+.author img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+#accordionFlushExample {
+  --bs-accordion-active-bg: #fff;
+  --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.article {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article img {
+  height: 330px;
+  width: 330px;
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+.info {
+  padding: 20px 20px 20px 40px;
+}
+
+.dot {
+  height: 10px;
+  width: 40px;
+  background-image: url(./assets/dot.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  display: inline-block;
+  margin: 0 10px 0 10px;
+}
+
+.featured .dot {
+  height: 10px;
+  width: 20px;
+}
+
+.minRead {
+  color: #4d6385;
+  font: 14px;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.fa-book-open {
+  margin-right: 5px;
+}
+
+.aboutMe {
+  padding: 25px 30px;
+  background-color: #fff9f3;
+  border: 1px solid rgba(240, 181, 129, 0.45);
+  border-radius: 10px;
+}
+
+.aboutMe img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.aboutText {
+  position: relative;
+  left: -25px;
+}
+
+.aboutImg {
+  background-image: url(./assets/AboutLogo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  height: 28px;
+  width: 32px;
+  position: relative;
+  top: -4px;
+  left: -30px;
+}
+
+.socialIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.fa-facebook {
+  color: blue;
+  font-size: 25px;
+}
+
+.fa-twitter {
+  color: #1da1f2;
+  font-size: 25px;
+}
+
+.fa-rss {
+  color: #f26522;
+  font-size: 25px;
+}
+
+.socialBg {
+  background-color: rgba(255, 231, 210, 0.25);
+  border: 1px solid rgba(240, 181, 129, 0.45);
+}
+
+.featured {
+  padding: 25px 30px;
+  background-color: #fff9f3;
+  border: 1px solid rgba(240, 181, 129, 0.45);
+  border-radius: 10px;
+}
+
+.featured img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+input {
+  border-radius: 8px 0px 0px 8px;
+  padding: 7px 0 7px 22px;
+  border: none;
+  outline: none;
+}
+
+.subscribeNewsletter input:focus {
+  outline: none;
+  cursor: text;
+}
+
+.subscribeNewsletter .subscribeButton {
+  border-radius: 0 8px 8px 0;
+}
+
+.bottomCarousel {
+  padding: 25px 30px 5px 30px;
+  background-color: #fff9f3;
+  border: 1px solid rgba(240, 181, 129, 0.45);
+  border-radius: 10px;
+}
+
+.bottomCarousel .dot {
+  height: 10px;
+  width: 20px;
+}
+
+.bottomCarousel h5,
+p {
+  color: black;
+}
+
+footer {
+  background-color: rgb(255, 249, 242);
+  color: rgb(48, 45, 84);
+}
+
+.footerLogo {
+  background-image: url(./assets/AboutLogo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  height: 28px;
+  width: 32px;
+}
+
+footer a {
+  color: rgb(48, 45, 84);
+  text-decoration: none;
+  transition: color 0.3s;
+  width: 80%;
+  border-bottom: 1px solid rgba(240, 181, 129, 0.45);
+}
+
+footer a:hover {
+  color: var(--gradColor1);
+}
+
+footer .featured {
+  border: none;
+}
+
+.waveText {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: black;
+}
+
+.spinningWheel {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 5;
+  animation: spin 2s linear infinite;
+  background-image: url(./assets/wheel.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  height: 30px;
+  width: 30px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.spinningWheel:hover::after {
+  content: "Don't click me!";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background-color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #333333;
+  font-size: 14px;
+  z-index: 6;
+}
+/* dont click me animacija */
+.spinningWheel:active {
+  content: "";
+  width: 100vh;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -20%);
+  z-index: 9999;
+  background-size: cover;
+  background-position: center;
+  transition: transform 10s ease;
+  box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: spin 1s linear infinite;
+}
+.spinningWheel:hover:active::after {
+  content: "";
+}
+
+/* rato animacija  */
+@keyframes spin {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+/* button to move page up */
+.bottomRightButton {
+  font-size: 14px;
+  line-height: 35px;
+  height: 55px;
+  width: 55px;
+  background: linear-gradient(97deg, var(--gradColor1), var(--gradColor2));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.searchButton {
+  font-size: 14px;
+  line-height: 35px;
+  height: 40px;
+  width: 40px;
+  background: linear-gradient(97deg, var(--gradColor1), var(--gradColor2));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+/* sticky buttons on bottom left side  */
+
+.stickyButton1 {
+  font-size: 14px;
+
+  padding: 15px 25px;
+  background-color: rgb(77, 28, 255);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: fixed;
+  bottom: 80px;
+  left: 1em;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.stickyButton2 {
+  font-size: 14px;
+  padding: 15px 25px;
+  background: linear-gradient(97deg, var(--gradColor1), var(--gradColor2));
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  z-index: 1;
+  cursor: pointer;
+}
+/* bottom carousel  */
+
+.customCaption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  text-align: start;
+}
+
+.access-icon {
+  position: absolute;
+  overflow: visible;
+  left: 50px;
+  top: 20px;
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  text-align: center;
+  line-height: 46px;
+  border-radius: 0px 0px 8px 8px;
+  background: #ffdb00;
+  color: var(--epcl-black);
+  -webkit-box-shadow: 0px 8px 16px -8px rgba(0, 0, 0, 0.3),
+    0px 13px 27px -5px rgba(50, 50, 93, 0.25);
+  box-shadow: 0px 8px 16px -8px rgba(0, 0, 0, 0.3),
+    0px 13px 27px -5px rgba(50, 50, 93, 0.25);
+}
+
+.access-icon::after {
+  content: "Members Article";
+  position: absolute;
+  font-size: 10px !important;
+  font-weight: normal !important;
+  top: -200%;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 100px;
+  padding: 5px 10px;
+  background: white;
+  color: var(--epcl-black);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.access-icon:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  font-size: 16px;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 1200px) {
+  .article img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 13px;
+  }
+
+  .info {
+    padding: 0;
+  }
+
+  .authorName {
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .article img {
+    width: 100%;
+    padding: 0;
+  }
+
+  .article {
+    display: block;
+  }
+
+  .subscribeNewsletter {
+    margin: 0;
+    margin-left: 20px;
+  }
+
+  .info {
+    padding: 0;
+    margin-left: 20px;
+  }
+  .imageHoverEffect::after {
+    content: none; /* Removes the content */
+  }
+
+  .imageHoverEffect:hover::after {
+    background-color: transparent;
+    color: transparent;
+  }
+
+  #footerFirstItem {
+    text-align: center;
+    border-right: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .article img {
+    width: 100%;
+    padding: 0;
+  }
+}
