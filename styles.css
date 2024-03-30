@@ -784,9 +784,10 @@ footer .featured {
 .customCaption {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: left;
-  text-align: start;
+  position: relative;
+  top: 115px;
+  left: 200px;
+  font-size: 14px;
 }
 
 .access-icon {
@@ -872,7 +873,7 @@ footer .featured {
     margin-left: 20px;
   }
   .imageHoverEffect::after {
-    content: none; /* Removes the content */
+    content: none;
   }
 
   .imageHoverEffect:hover::after {
@@ -888,6 +889,15 @@ footer .featured {
     align-items: center;
     justify-content: center;
   }
+}
+
+.customCaption {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 115px;
+  left: -80px;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 768px) {
